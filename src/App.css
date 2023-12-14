@@ -1,6 +1,27 @@
+
+.cont {
+  /* scroll-snap-type: y proximity; */
+  scroll-snap-points-y: repeat();
+  overflow-y: scroll;
+  width: 100%;
+  height: 100dwh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.child{
+  scroll-snap-align: end;
+}
+.test {
+  background-color: aqua;
+}
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
+
+
 
 /* #root {
   max-width: 1280px;
