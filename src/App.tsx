@@ -1,12 +1,19 @@
 // import { motion } from 'framer-motion';
 import './App.css';
 import { BasicClasses } from './styles/BasicStyles';
-import { IoLogoAmplify } from 'react-icons/io5';
-import { GrGithub } from 'react-icons/gr';
-import { TfiEmail } from 'react-icons/tfi';
+import { IoLogoAmplify } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
+import { VscFilePdf } from "react-icons/vsc";
+
+
+import Welcome from './components/Welcome';
 
 function App() {
   const bgImage = 'https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg';
+  // const image2 = 'https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  
+  const projects = ['Shortchase', 'Mimotar', 'Oobla', 'PZ', 'GlobalReformation', 'KAD']
 
   return (
     <section
@@ -23,29 +30,23 @@ function App() {
           <IoLogoAmplify />
         </span>
         <span className='md:text-3xl flex gap-5 text-base items-center '>
-          <GrGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125" />
+          <FaGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125" />
           <TfiEmail className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
+          <VscFilePdf className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
         </span>
       </div>
 
       <div className="flex mt-3 w-full justify-between items-center">
-        <div className={`grid h-full  w-2/3 items-start p-8 text-${BasicClasses.primary}`}>
-          <h1 className=' font-bold text-6xl'> Welcome. </h1>
-          <p className={`font-semibold mt-4 `}>
-            👋 Hey, I'm Kelechi, a Full Stack Developer passionate about JavaScript, React.js, React
-            Native, Express.js, and TypeScript. <br />
-            🚀 I specialize in crafting dynamic web and mobile applications, from sleek React.js UIs
-            to robust Express.js backends. <br />
-            💡 I've built a microblogging betting system for insightful predictions and dabbled in
-            e-commerce for seamless online shopping. <br />
-            🔧 With TypeScript, I ensure code reliability. Let's innovate together!
-            <br />
-            Explore my portfolio for creative and functional projects.
-          </p>
+        <div className='flex h-full'>
+          <div className='h-full bg-green-500'></div>
+        <Welcome/>
         </div>
         <div className={`grid w-1/3 h-full items-start p-8 text-${BasicClasses.primary}`}>
         <h1 className=' font-bold text-6xl'> Projects. </h1>
-        <p className={`font-semibold mt-4 `}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur saepe rerum facere, deleniti ipsa commodi, fugit corrupti ipsam quos, iusto iure quam aut? Dolores aliquid veritatis laboriosam, debitis ea voluptates.</p>
+        {
+          projects.map((project) => <p className={`font-semibold bg-black cursor-pointer text-[#66FCF1] text-center mt-4 p-2 shadow-lg rounded-3xl`}>{project} </p> )
+        }
+        
         </div>
       </div>
     </section>
