@@ -30,10 +30,10 @@ import Welcome from './components/Welcome';
 import { useState } from 'react';
 import PXPharama from './components/projects/PX-Pharama';
 import Shortchase from './components/projects/Shortchase';
-import Mimotar from './components/projects/Mimotar';
 import Oobla from './components/projects/Oobla';
 import GlobalReformation from './components/projects/GlobalReformation';
 import KAD from './components/KAD';
+import Kejepay from './components/projects/Kejepay';
 
 function App() {
 const [current, setCurrent] = useState('Welcome');
@@ -41,9 +41,10 @@ const [current, setCurrent] = useState('Welcome');
   // const bgImage = 'https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg';
   // const image2 = 'https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   
-  const projects = ['Shortchase', 'Mimotar', 
+  const projects = [{name:'Shortchase', link: 'https://shortchaseclient.netlify.app/'}, {name:'Kejepay', link:'https://kele.netlify.app/'}, 
   // 'Oobla', 
-  'PX Pharma', 'GlobalReformation', 'KAD']
+  // 'PX Pharma', 
+  {name:'GlobalReformation', link: 'https://globalreformationnetwork.org/'}]
   const toolset = [{name:'Javascript', icon: <TbBrandJavascript/>}, {name:'ReactJS', icon: <FaReact/>},{name:'ExpressJS', icon: <SiExpress/>}, {name:'ReactNative', icon: <TbBrandReactNative/>},{name:'MongoDB', icon: <TbBrandMongodb/>}, {name:'Figma', icon: <PiFigmaLogoLight/>}, {name:'Postgress', icon: <SiPostgresql/>}, {name:'Prisma', icon: <SiPrisma/>}]
 
   // const proficiency = ['OOP', 'UX Search', 'UI Designs', 'Frontend', 'DBMS', 'Backend', 'Docker', 'Mobile App']
@@ -60,7 +61,7 @@ const [current, setCurrent] = useState('Welcome');
           <IoLogoAmplify />
         </span>
         <span className='md:text-3xl flex gap-5 text-base items-center '>
-          <FaGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125" />
+          <FaGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125" onClick={()=> window.location.reload()} />
           <TfiEmail className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
           <VscFilePdf className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
         </span>
@@ -70,11 +71,11 @@ const [current, setCurrent] = useState('Welcome');
         <div className='flex w-full md:w-2/3 h-full'>
         {
           current == 'Welcome' ? <Welcome/>
-          : current == 'Shortchase' ? <Shortchase/>
-          : current =='Mimotar'? <Mimotar />
+          : current == 'Shortchase' ? <Shortchase url='https://shortchaseclient.netlify.app/'/>
+          : current =='Kejepay'? <Kejepay url='https://kejepay.com.ng/' />
           : current == 'Oobla'? <Oobla/>
           : current == 'PX Pharma'? <PXPharama />
-          : current == 'GlobalReformation'? <GlobalReformation/>
+          : current == 'GlobalReformation'? <GlobalReformation url='https://globalreformationnetwork.org/'/>
           : current == 'KAD'? <KAD/>
           : null
         }
@@ -83,7 +84,7 @@ const [current, setCurrent] = useState('Welcome');
         <h1 className=' font-bold text-3xl flex items-center gap-2'> Projects<IoCheckbox/> </h1>
         <div className="flex flex-wrap gap-2">
         {
-          projects.map((project) => <p className={`${current === project && 'text-[#66FCF1] border-[#66FCF1]' } border transform transition-transform duration-300 hover:scale-110 font-bold cursor-pointer text-center mt-4 p-2 py-1 shadow-lg rounded-3xl  hover:text-[#66FCF1] hover:border-[#66FCF1]`} onClick={()=> setCurrent(project)}>{project} </p> )
+          projects.map((project) => <p className={`${current === project.name && 'text-[#66FCF1] border-[#66FCF1]' } border transform transition-transform duration-300 hover:scale-110 font-bold cursor-pointer text-center mt-4 p-2 py-1 shadow-lg rounded-3xl  hover:text-[#66FCF1] hover:border-[#66FCF1]`} onClick={()=> setCurrent(project.name)}>{project.name} </p> )
         }
         </div>
 
