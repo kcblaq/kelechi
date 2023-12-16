@@ -28,11 +28,8 @@ import { SiPrisma } from "react-icons/si";
 
 import Welcome from './components/Welcome';
 import { useState } from 'react';
-import PXPharama from './components/projects/PX-Pharama';
 import Shortchase from './components/projects/Shortchase';
-import Oobla from './components/projects/Oobla';
 import GlobalReformation from './components/projects/GlobalReformation';
-import KAD from './components/KAD';
 import Kejepay from './components/projects/Kejepay';
 
 function App() {
@@ -73,10 +70,7 @@ const [current, setCurrent] = useState('Welcome');
           current == 'Welcome' ? <Welcome/>
           : current == 'Shortchase' ? <Shortchase url='https://shortchaseclient.netlify.app/'/>
           : current =='Kejepay'? <Kejepay url='https://kejepay.com.ng/' />
-          : current == 'Oobla'? <Oobla/>
-          : current == 'PX Pharma'? <PXPharama />
           : current == 'GlobalReformation'? <GlobalReformation url='https://globalreformationnetwork.org/'/>
-          : current == 'KAD'? <KAD/>
           : null
         }
         </div>
