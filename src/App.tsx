@@ -54,13 +54,22 @@ const [current, setCurrent] = useState('Welcome');
       {/* <div className="overlay"></div> */}
 
       <div className="flex w-full justify-between items-center p-3 md:p-8">
-        <span className='md:text-6xl text-3xl  cursor-pointer transform transition-transform duration-300 hover:scale-125 '>
+        <span className='md:text-6xl text-3xl  cursor-pointer transform transition-transform duration-300 hover:scale-125 '
+        onClick={()=> window.location.reload()}
+        >
           <IoLogoAmplify />
         </span>
         <span className='md:text-3xl flex gap-5 text-base items-center '>
-          <FaGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125" onClick={()=> window.location.reload()} />
+          <a href="https://github.com/kcblaq?tab=overview" target='_blank'>
+          <FaGithub className="cursor-pointer  transform transition-transform duration-300 hover:scale-125"  />
+          </a>
+          <a href="mailto:ugwujameskelechi@gmail.com" target='_blank'>
           <TfiEmail className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
+          </a>
+          <a href='https://drive.google.com/file/d/1TV_U607OCLPeX8RXdFof6hxlUZL-ZYjb/view?usp=sharing' download>
+
           <VscFilePdf className="cursor-pointer transform transition-transform duration-300 hover:scale-125" />
+          </a>
         </span>
       </div>
 
