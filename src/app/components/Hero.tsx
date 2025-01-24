@@ -13,7 +13,7 @@ export default function Hero() {
       <p className="pt-2 ">
         A full-stack software engineer helping businesses turn their visions into a digital reality. I specialize in designing and building modern websites and web-based apps.
       </p>
-      <div className="flex gap-3 py-2 w-full flex-col md:flex-row md:justify-start justify-between">
+      <div className="flex gap-3 py-2 w-full flex-col md:flex-row md:justify-start mt-0 md:mt-10 justify-between">
         <CustomButton size="large" >See my resume</CustomButton>
         <CustomButton size="large" variant="outline">Get in touch</CustomButton>
       </div>

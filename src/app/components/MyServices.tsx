@@ -3,46 +3,71 @@
 
 import React from 'react';
 import ServiceIcon from "../../../public/asset/service.svg"
-import Image from "next/image"
-import BG from "../../../public/asset/fenoclick.png";
+import Image, { StaticImageData } from "next/image"
+import BG from "../../../public/asset/service/frontendbg.svg";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import BE from "../../../public/asset/service/backend.png";
+import SA from "../../../public/asset/service/architecture.svg";
+
 
 
 interface ServiceCardProps {
     title: string;
-    icon: string;
-    onClick?: () => void;
+    icon: StaticImageData;
 }
 
-const ServiceCard = () => {
+const ServiceCard = ({title, icon}: ServiceCardProps) => {
     return (
-    //   <div className="relative w-full h-64 bg-cover bg-center bg-no-repeat overflow-hidden rounded-lg shadow-md">
-    //     <div className="absolute top-4 right-4 cursor-pointer">
-    //       <BsArrowUpRightCircleFill className="text-white text-3xl cursor-pointer " />
-    //     </div>
-    //     <div className="absolute inset-0 bg-black/50 p-6 flex flex-col justify-end">
-    //       <h3 className="text-white text-xl font-semibold">Service Title</h3>
-    //       <p className="text-white/80 mt-2">Service description goes here</p>
-    //     </div>
-    //   </div>
-    <div className='relative h-64 w-80 shadow-lg rounded-lg mt-10 bg-gray-400 p-6 pt-16'>
-        <h1 className='text-primary font-bold text-3xl'> Frontend Engineering</h1>
-        <div className="flex items-end justify-end w-full mt-14 hover:text-white text-5xl cursor-pointer hover:transition-transform translate ">
-        <BsArrowUpRightCircleFill />
-        </div>
-    <div className='absolute rounded-full h-20 w-20 shadow-md left-1/2 -translate-x-1/2 -top-10 bg-gray-400'>
-    </div>
-</div>
-    );
-  };
+        <div className='relative overflow-hidden group shadow-primary/50 transition-all duration-300 backdrop-blur-lg grid rounded-[50px] rounded-bl-[40px] rounded-br-[40px] shadow-md bg-[#4C4CAC] bg-opacity-70 mb-1 mr-1 cursor-pointer'>
 
+            <div className=" transition-all p-3 md:p-5 group-hover:bg-primary border-b duration-500">
+                <h3 className='text-2xl text-white text-center p-3 font-semibold group-hover:border-0'>{title} </h3>
+
+
+            </div>
+            <div className="relative gap-3 pt-10 overflow-hidden group-hover:bg-primary"
+            >
+
+                <Image
+                    src={icon}
+                    alt="service image"
+                    className=" mt-4 w-full transition-transform transform duration-700 group-hover:scale-105"
+                />
+                {/* <div className=" mt-4 w-full transition-transform transform duration-700 group-hover:scale-105">
+                    {icon}
+                </div> */}
+                <div className="absolute p-6 pl-10 pt-10 -right-4 border-none bottom-0 ">
+                    <div className="rounded-full p-8 bg-white  shadow-lg flex justify-end  group-hover:bg-primary cursor-pointer duration-500">
+
+                        <BsArrowUpRightCircleFill className="text-primary group-hover:text-white text-3xl duration-500" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    );
+};
+
+const FrontEndIcon = () => {
+    return (
+        <Image
+            src={BG}
+            fill
+            alt="service image"
+            className=" mt-4 w-full transition-transform transform duration-700 group-hover:scale-105"
+        />
+    );
+}
 
 export default function MyServices() {
     return (
-        <div className="w-full p-2 md:p-20 bg-[#454545] -mt-24 rounded-3xl shadow-md bg-opacity-90 flex flex-col gap-3 md:gap-5">
-            <h1 className="items-center gap-1 flex text-2xl md:text-3xl"> My <span className="text-primary"> Services  </span> <sup> <Image src={ServiceIcon} alt="icon image" height={10} width={10} /> </sup> </h1>
-            <div className="grid grid-cols-1 md:grid-cols-3">
-                <ServiceCard />
+        <div className="w-full p-2 md:p-20 bg-[#454545]  mt-1 md:-mt-24 rounded-3xl shadow-md flex flex-col gap-3 md:gap-5">
+            <h1 className="items-center gap-1 flex text-3xl font-semibold md:text-5xl mb-4 md:mb-8"> My <span className="text-primary"> Services  </span> <sup> <Image src={ServiceIcon} alt="icon image" height={27} width={27} /> </sup> </h1>
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+                <ServiceCard title='Front-end Development' icon={BE}  />
+                <ServiceCard title='Back-end Development' icon={SA} />
+                <ServiceCard title='Software Architecture' icon={BG} />
+
 
             </div>
         </div>

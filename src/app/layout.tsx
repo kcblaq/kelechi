@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import MobileMenu from "./components/MobileMenu";
+import { AOSInit } from "./components/AOSProvider";
 
 
 // Import your Nav and Footer components
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <AOSInit />
         {/* Navigation */}
         {/* <Nav /> */}
 

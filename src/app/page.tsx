@@ -18,7 +18,7 @@ import GetToKnoeMe from "./components/GetToKnoeMe";
 
 export default function Home() {
   return (
-    <main className="w-full grid gap-4 md:gap-24" >
+    <main className="w-full grid gap-12 md:gap-24" >
       <section className=" grid w-full  ">
         <div className=" w-full  relative px-3 md:px-36 "
           style={{
