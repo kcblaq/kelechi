@@ -2,12 +2,13 @@
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
-import SelectedWorksCard, { ReusableCarouselItem } from "./works/SelectedWorksCard"
+import { ReusableCarouselItem } from "./works/SelectedWorksCard"
 import SHORTCHASE from "../../../public/asset/works/shortchase.png";
-import BG from "../../../public/asset/works/halo.png";
 import ZUMMIT from "../../../public/asset/works/zummit.png";
 import HALO from "../../../public/asset/works/halo.png";
-import { LuArrowUpRight } from "react-icons/lu";
+import BUD from "../../../public/asset/works/budco.png";
+import { Budsubtitle, GlobalReformation, Halosubtitle, Shortchasesubtitle, Zummitsubtitle } from "./works/Subtitles";
+import { useRouter } from "next/navigation"
 
 export function SelectedWorks() {
   const [api, setApi] = React.useState<CarouselApi>()
@@ -27,52 +28,8 @@ export function SelectedWorks() {
     })
   }, [api])
 
-  const Halosubtitle = ()=> {
-    return (
-      <>
-      
-      <p>
-        Halo is a platform for lending and borrowing money. We help people access credit, save money, and make money on their own.
-      </p>
-      <div className="p-6">
-      <li> Lender&apos;s best place for all</li>
-      <li> Lender&apos;s best place for all</li>
-      <li> Lender&apos;s best place for all</li>
-      </div>
-      </>
-    )
-  }
-  const Zummitsubtitle = ()=> {
-    return (
-      <>
-      
-      <p>
-        
-        Zummit Africa is an institution for building APIs and AI for businesses and organizations. It has two wings:
-        </p>
-
-
-      <div className="p-6">
-      <li>  Training potential IT experts in various fields, and </li>
-      <li>  Building applications.</li>
-      </div>
-      </>
-    )
-  }
-
-  function Shortchasesubtitle(){
-    return (
-      <>
-     <p>
-     ShortChase is a comprehensive sports betting platform that provides innovative betting solutions and real-time sports analytics. Its core code services include:
-     </p>
-     <div className="p-6">
-      <li>  Developing advanced betting algorithms and predictive models for accurate sports event outcomes </li>
-      <li>  Creating secure, scalable microservices architecture for handling high-volume betting transactions</li>
-      <li>  Implementing real-time data processing and live scoring integration for dynamic betting experiences</li>
-      </div>
-      </>
-    )
+  function handleRoute(link: string){
+    window.open(link, "_blank")
   }
 
   return (
@@ -83,60 +40,81 @@ export function SelectedWorks() {
           setApi={setApi}
           opts={{ loop: true }}
           plugins={[Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false })]}
-          className="relative mx-w-sm md:max-w-full md:w-full h-full"
+          className="relative mx-w-sm md:max-w-full md:w-full h-full "
         >
-          {/* <CarouselContent className="flex">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/3">
-                <SelectedWorksCard
-                  title="Here is my title for slide"
-                  image="https://source.unsplash.com/random/800x600"
-                  description="Here is my description for slide"
-                  link="/"
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent> */}
-          <CarouselContent className="flex gap-0 md:gap-6  ">
-
-            <CarouselItem className="basis-full group md:basis-1/2 group lg:basis-1/2 h-[500px] md:ml-6 rounded-lg
-            flex flex-col justify-between
-            " style={{
-                backgroundImage: `url(${SHORTCHASE.src})`,
+          <CarouselContent className="flex md:gap-6">
+            <CarouselItem
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative md:ml-6 cursor-pointer"
+              onClick={()=> handleRoute("https://www.haloasset.com/")}
+              style={{
+                backgroundImage: `
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%),
+                url(${HALO.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat"
-              }}>
-
-              <ReusableCarouselItem title="Global Reformation" subtitle={<Shortchasesubtitle/>} />
+              }}
+            >
+              <ReusableCarouselItem title="Halo" subtitle={<Halosubtitle />} />
             </CarouselItem>
 
-            <CarouselItem className="basis-full md:basis-1/2 group lg:basis-1/2 h-[500px] rounded-lg" style={{
-              backgroundImage: `url(${HALO.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
-            }}>
-              <ReusableCarouselItem title="Halo" subtitle={<Halosubtitle/>} />
+            <CarouselItem
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              onClick={()=> handleRoute("https://www.shortchase.com/")}
+              style={{
+                backgroundImage: `
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%), 
+                url(${SHORTCHASE.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <ReusableCarouselItem title="Shortchase" subtitle={<Shortchasesubtitle />} />
             </CarouselItem>
 
-            <CarouselItem className="basis-full md:basis-1/2 group lg:basis-1/2 h-[500px] rounded-lg" style={{
-              backgroundImage: `url(${ZUMMIT.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
-            }}>
-              <ReusableCarouselItem title="Zummit" subtitle={<Zummitsubtitle/>} />
-
+            <CarouselItem
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              onClick={()=> handleRoute("https://www.zummitafrica.com/")}
+              style={{
+                backgroundImage: `
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%),
+                url(${ZUMMIT.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <ReusableCarouselItem title="Zummit" subtitle={<Zummitsubtitle />} />
             </CarouselItem>
-            
-            <CarouselItem className="basis-full md:basis-1/2 group lg:basis-1/2 h-[500px] rounded-lg" style={{
-              backgroundImage: `url(${SHORTCHASE.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
-            }}>
-              <ReusableCarouselItem title="Shortchase" subtitle={<Shortchasesubtitle/>} />
+
+            <CarouselItem
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              onClick={()=> handleRoute("https://globalreformationnetwork.org/")}
+              style={{
+                backgroundImage: `
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%),
+                url(${SHORTCHASE.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <ReusableCarouselItem title="Global Reformation" subtitle={<GlobalReformation />} />
+            </CarouselItem>
+            <CarouselItem
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              onClick={()=> handleRoute("https://budhq.co/")}
+              style={{
+                backgroundImage: `
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%),
+                url(${BUD.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <ReusableCarouselItem title="Budco" subtitle={<Budsubtitle />} />
             </CarouselItem>
 
           </CarouselContent>
