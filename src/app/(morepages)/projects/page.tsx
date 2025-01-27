@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProjectCard, WebmaxiCard } from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 import WEBMAXI from "../../../../public/asset/projects/webmaxi.svg";
 import BUD from "../../../../public/asset/projects/bud.svg";
 import ZUMMIT from "../../../../public/asset/projects/zummit.svg";
