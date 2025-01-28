@@ -22,8 +22,8 @@ export default function PagesNav() {
     const pathname = usePathname();
 
     return (
-
-        <nav className="hidden  w-full md:flex items-center gap-14 justify-between min-h-60 flex-col border-b pb-3 lg:pb-10"
+        
+        <nav className="w-full md:flex items-center gap-14 justify-between min-h-60 flex-col border-b pb-3 lg:pb-10"
             style={{
                 backgroundImage: `url(${BGS.src})`,
                 backgroundSize: "cover",
@@ -31,7 +31,10 @@ export default function PagesNav() {
                 backgroundRepeat: "no-repeat"
             }}
         >
-            <section className="flex items-center justify-between w-full lg:px-20 p-3 ">
+            <div className="flex items-center justify-center mb-20 my-10 w-full lg:hidden">
+                <Image src={Logo} alt='The KC logo' width={25} height={35} />
+            </div>
+            <section className="hidden lg:flex items-center justify-between w-full lg:px-20 p-3 ">
                 <div className="flex items-center justify-between w-full bg-opacity-10 lg:px-10 bg-gray-400 rounded-lg ">
                     <div className="flex gap-3 md:gap-5 font-semibold items-center py-5">
                         <Link href={`/`} className="transition-transform duration-300 hover:scale-110">

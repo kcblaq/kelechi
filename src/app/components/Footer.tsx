@@ -45,7 +45,7 @@ export default function Footer() {
                         </li>
 
                         <li>
-                            <Link href={`/works`}>Work</Link>
+                            <Link href={`/projects`}>Work</Link>
                         </li>
                         <li>
                             <Link href={`/tech-stack`}>Tech Stack</Link>

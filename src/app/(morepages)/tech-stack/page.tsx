@@ -81,7 +81,7 @@ function DisplayFrame({ name, data }: { name: string, data: Props[] }) {
 
 export default function page() {
   return (
-    <div className='w-full  grid px-3 lg:px-20 pb-2 py-20 mb-20  gap-6 md:gap-12'>
+    <div className='w-full  grid px-3 lg:px-20 pb-2 py-10 mb:py-20 mb-20  gap-6 md:gap-12'>
       <DisplayFrame name={'General Tools'} data={generalTechData} />
       <DisplayFrame name={'Frontend Tools'} data={frontendTechData} />
       <DisplayFrame name={'Backend Tools'} data={backendTechData} />

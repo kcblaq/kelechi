@@ -44,7 +44,7 @@ export function SelectedWorks() {
         >
           <CarouselContent className="flex md:gap-6">
             <CarouselItem
-              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative md:ml-6 cursor-pointer"
+              className="group md:basis-1/2 lg:basis-1/2 h-[300px] md:h-[500px] rounded-lg relative md:ml-6 cursor-pointer"
               onClick={()=> handleRoute("https://www.haloasset.com/")}
               style={{
                 backgroundImage: `

@@ -107,7 +107,7 @@ export function ProjectCard({tools, title, description, items, link, image} : Pr
                 </div>
             </div>
 
-            <div className='w-full col-span-1 grid mt-4 lg:mt-0 '>
+            <div className='w-full hidden col-span-1 md:grid mt-4 lg:mt-0 '>
                 <Image src={image} alt='Webmaxi' width={564} />
 
             </div>

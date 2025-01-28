@@ -4,11 +4,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import ContactForm from './ContactForm';
 
 
 export default function page() {
   return (
-    <div className='w-full  grid px-3 lg:px-20 pb-2 py-20  gap-4'>
+    <div className='w-full  grid px-3 lg:px-20 pb-2 py-10 md:py-20  gap-4'>
       <section className="w-full grid p-3 gap-4 bg-[#F6F6F6] my-10 rounded-xl shadow-sm">
         <div className="flex justify-between w-full items-center p-3">
           <div className="flex items-center gap-0 text-xl">
@@ -16,11 +17,11 @@ export default function page() {
             <GoDotFill className="text-yellow-500" />
             <GoDotFill className="text-green-500" />
           </div>
-          <p> New Message</p>
+          <p className="font-semibold"> New Message</p>
           <div> </div>
         </div>
 
-        <div className="flex w-full items-center gap-1 border-b p-2">
+        {/* <div className="flex w-full items-center gap-1 border-b p-2">
           <Label htmlFor='email'>Email:</Label>
           <Input
             type="text"
@@ -47,7 +48,9 @@ export default function page() {
         <div className="grid w-full gap-2 bg-[#F3F3F3] rounded-lg p-3">
           <Textarea placeholder="Write your message here." />
         </div>
-        <Button size={`lg`}> Send</Button>
+        <Button size={`lg`}> Send</Button> */}
+
+        <ContactForm />
       </section>
 
     </div>
