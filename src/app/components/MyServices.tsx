@@ -61,7 +61,7 @@ const FrontEndIcon = () => {
 
 export default function MyServices() {
     return (
-        <div className="w-full p-2 md:p-20 bg-[#454545]  mt-1 md:-mt-24 rounded-3xl shadow-md flex flex-col gap-3 md:gap-5">
+        <div className="w-full p-4 md:p-20 bg-[#454545]  mt-1 md:-mt-24 md:rounded-[50px] shadow-md flex flex-col gap-3 md:gap-5">
             <h1 className="items-center gap-1 flex text-3xl font-semibold md:text-5xl mb-4 md:mb-8"> My <span className="text-primary"> Services  </span> <sup> <Image src={ServiceIcon} alt="icon image" height={27} width={27} /> </sup> </h1>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
                 <ServiceCard title='Front-end Development' icon={BE}  />

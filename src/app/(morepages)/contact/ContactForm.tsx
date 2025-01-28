@@ -113,6 +113,8 @@ const ContactForm = (): JSX.Element => {
         message: formState.message
       };
 
+      console.log("@", formState)
+
       const res = await emailjs.send(serviceID, templateID, emailParams, userID);
 
       if (res.status === 200) {
@@ -140,7 +142,7 @@ const ContactForm = (): JSX.Element => {
         {formState.submitStatus === "success" && (
           <Alert className="mb-4 bg-green-50">
             <AlertDescription>
-              Thank you for your message! We&apos;ll get back to you soon.
+              Thank you for reaching out! I&apos;ll get back to you shortly.
             </AlertDescription>
           </Alert>
         )}
