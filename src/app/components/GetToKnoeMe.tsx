@@ -48,7 +48,7 @@ function AboutMe({title, image, description, link, width=150, height=200} : Prop
 
 export default function GetToKnoeMe() {
   return (
-    <div className="w-full p-2 md:p-20 bg-[#454545] rounded-[50px] shadow-md flex flex-col gap-3 md:gap-5">
+    <div className="w-full p-4 md:p-20 bg-[#454545] md:rounded-[50px] shadow-md flex flex-col gap-3 md:gap-5">
     {/* <h1 className="items-center text-white gap-1 font-semibold flex text-2xl md:text-3xl"> Get to  <span className="text-primary"> Know me  </span>  </h1> */}
     <h1 className="items-center gap-1 flex text-3xl font-semibold md:text-5xl mb-4 md:mb-8 text-white"> Get to <span className="text-primary"> know me  </span>  </h1>
     

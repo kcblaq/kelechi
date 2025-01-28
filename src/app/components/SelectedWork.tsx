@@ -9,6 +9,7 @@ import HALO from "../../../public/asset/works/halo.png";
 import BUD from "../../../public/asset/works/budco.png";
 import { Budsubtitle, GlobalReformation, Halosubtitle, Shortchasesubtitle, Zummitsubtitle } from "./works/Subtitles";
 import { useRouter } from "next/navigation"
+import { CarouselPagination } from "./works/CarouselPagination"
 
 export function SelectedWorks() {
   const [api, setApi] = React.useState<CarouselApi>()
@@ -34,7 +35,7 @@ export function SelectedWorks() {
 
   return (
     <section className="grid gap-10 w-full md:px-20 overflow-hidden">
-      <h1 className="items-center gap-1 flex text-3xl font-semibold md:text-5xl mb-4 md:mb-8">Selected <span className="text-primary">Work</span></h1>
+      <h1 className="items-center gap-1 flex text-3xl p-4 font-semibold md:text-5xl md:mb-8">Selected <span className="text-primary">Work</span></h1>
       <div className="h-full w-full p-2 md:p-6">
         <Carousel
           setApi={setApi}
@@ -42,9 +43,9 @@ export function SelectedWorks() {
           plugins={[Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false })]}
           className="relative mx-w-sm md:max-w-full md:w-full h-full "
         >
-          <CarouselContent className="flex md:gap-6">
+          <CarouselContent className="flex md:gap-6 m-2 gap-3">
             <CarouselItem
-              className="group md:basis-1/2 lg:basis-1/2 h-[300px] md:h-[500px] rounded-lg relative md:ml-6 cursor-pointer"
+              className="group md:basis-1/2 lg:basis-1/2  md:h-[500px] rounded-lg relative md:ml-6 cursor-pointer"
               onClick={()=> handleRoute("https://www.haloasset.com/")}
               style={{
                 backgroundImage: `
@@ -74,7 +75,7 @@ export function SelectedWorks() {
             </CarouselItem>
 
             <CarouselItem
-              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer w-fit "
               onClick={()=> handleRoute("https://www.zummitafrica.com/")}
               style={{
                 backgroundImage: `
@@ -103,7 +104,7 @@ export function SelectedWorks() {
               <ReusableCarouselItem title="Global Reformation" subtitle={<GlobalReformation />} />
             </CarouselItem>
             <CarouselItem
-              className="group md:basis-1/2 lg:basis-1/2 h-[500px] rounded-lg relative cursor-pointer"
+              className="group md:basis-1/2 lg:basis-1/2 md:h-[500px] rounded-lg relative cursor-pointer"
               onClick={()=> handleRoute("https://budhq.co/")}
               style={{
                 backgroundImage: `
@@ -120,9 +121,7 @@ export function SelectedWorks() {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-          <div className="py-2 text-center text-sm text-muted-foreground">
-            Slide {current} of {count}
-          </div>
+          <CarouselPagination current={current} count={count} />
         </Carousel>
       </div>
     </section>

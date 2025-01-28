@@ -14,7 +14,16 @@ export function ReusableCarouselItem({
   link = "/"
 }: CarouselItemProps) {
   return (
-    <div className="flex flex-col justify-between h-full">
+<>
+<main className=" w-fit absolute break-words md:hidden bottom-0 left-0.5 right-0.5 m-1 bg-gray-600 p-2 rounded-lg bg-opacity-90">
+   <div className=''>
+     <h2 className="text-2xl md:text-4xl shadow-lg p-3 text-white font-bold  rounded-lg group-hover:hidden">
+       {title}
+     </h2>
+   </div>
+   <p>{subtitle} </p>
+  </main>
+    <div className="hidden md:flex  flex-col justify-between h-full">
       <div className="flex justify-end md:p-4">
         <span className="rounded-full text-primary p-3 bg-white border-primary border cursor-pointer
                 group-hover:bg-primary group-hover:text-white transition-colors duration-300 ease-in-out">
@@ -23,9 +32,6 @@ export function ReusableCarouselItem({
       </div>
 
       <div className="overflow-hidden">
-        {/* <h1 className="text-2xl md:text-4xl shadow-lg p-3 bg-gray-600 text-white font-bold md:mb-20 rounded-tr-lg rounded-br-lg border-l-8 group-hover:hidden inline-block">
-          {title}
-        </h1> */}
         <h1 className="text-2xl md:text-4xl shadow-lg p-3 text-white font-bold mb-20  rounded-lg group-hover:hidden">
           {title}
         </h1>
@@ -46,5 +52,6 @@ export function ReusableCarouselItem({
         </div>
       </div>
     </div>
+</>
   );
 }
