@@ -14,8 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kelechi Ugwu | Fullstack Software Engineer",
-  description:
-    "Fullstack Software Engineer, Proficient with Next.js, React.js, React Native, Express.js, and TypeScript. Great with communication and leadership qualities.",
+  description: "Fullstack Software Engineer, Proficient with Next.js, React.js, React Native, Express.js, and TypeScript. Great with communication and leadership qualities.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function MainLayout({

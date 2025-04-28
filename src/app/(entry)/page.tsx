@@ -14,6 +14,7 @@ import MyServices from "../components/MyServices";
 import { SelectedWorks } from "../components/SelectedWork";
 import Nav from "../components/Nav";
 import WorkTogether from "../components/WorkTogether";
+import PagesNav from "../components/PagesNav";
 
 
 
@@ -32,6 +33,7 @@ export default function Home() {
           }}
         >
           <Nav />
+          {/* <PagesNav/> */}
           <MobileLogo />
 
           <Hero />

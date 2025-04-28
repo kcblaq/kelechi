@@ -21,7 +21,7 @@ export function ReusableCarouselItem({
        {title}
      </h2>
    </div>
-   <p>{subtitle} </p>
+   <div>{subtitle} </div>
   </main>
     <div className="hidden md:flex  flex-col justify-between h-full">
       <div className="flex justify-end md:p-4">

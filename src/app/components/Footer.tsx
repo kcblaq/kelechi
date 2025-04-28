@@ -69,7 +69,7 @@ export default function Footer() {
                             <Link href={`https://x.com/kcblaqdigital`}  target="_blank">X (Twitter) </Link>
                         </li>
                         <li>
-                            <Link href={`https://drive.google.com/file/d/1le5HknoXbLBc9IdHixm025pjpRCl7coq/view?usp=sharing`} target="_blank">My Resume</Link>
+                            <Link href={`https://drive.google.com/file/d/1qE3QRMuFfIVjbx2CkEZ77wPlR-IUve2q/view?usp=sharing`} target="_blank">My Resume</Link>
                         </li>
                     </ul>
                     <small className="col-span-1 md:hidden mt-4 flex items-center">
