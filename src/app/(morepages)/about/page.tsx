@@ -29,7 +29,7 @@ export default function About() {
       Ultimately, what drives me is the excitement of being part of businesses that are growing from startups to multinational brands. I&apos;m always eager to learn, collaborate, and contribute to the success of the organizations I work with. If you&apos;re interested in working together, I&apos;d love to hear from you!
       </p>
       <p>
-      Feel free to reach out via <a href='mailto:ugwujameskelechi@gmail.com' target='_blank' className={linkStyle}> e-mail </a>, or follow me on <a href='https://x.com/kcblaqdigital' className={linkStyle} target='_blank'>Twitter</a>. Want to see where I’ve worked? Check out my <a href="https://drive.google.com/file/d/1le5HknoXbLBc9IdHixm025pjpRCl7coq/view?usp=sharing" className={linkStyle}> Resume</a>, or Connect with me on <a href="https://www.linkedin.com/in/kelechiugwu" target='_blank' className={linkStyle}>LinkedIn</a>.
+      Feel free to reach out via <a href='mailto:ugwujameskelechi@gmail.com' target='_blank' className={linkStyle}> e-mail </a>, or follow me on <a href='https://x.com/kcblaqdigital' className={linkStyle} target='_blank'>Twitter</a>. Want to see where I’ve worked? Check out my <a href="https://drive.google.com/file/d/1qE3QRMuFfIVjbx2CkEZ77wPlR-IUve2q/view?usp=sharing" className={linkStyle}> Resume</a>, or Connect with me on <a href="https://www.linkedin.com/in/kelechiugwu" target='_blank' className={linkStyle}>LinkedIn</a>.
       </p>
       <div className='flex flex-col gap-4'>
           <p className="">
