@@ -14,7 +14,7 @@ export default function Hero() {
         A full-stack software engineer helping businesses turn their visions into a digital reality. I specialize in designing and building modern websites and web-based apps.
       </p>
       <div className="flex gap-3 py-2 w-full flex-col md:flex-row md:justify-start mt-0 md:mt-10 justify-between">
-       <a href={`https://drive.google.com/file/d/1qE3QRMuFfIVjbx2CkEZ77wPlR-IUve2q/view`} target='blank'>
+       <a href={`https://drive.google.com/file/d/1qE3QRMuFfIVjbx2CkEZ77wPlR-IUve2q/view?usp=sharing`} target='blank'>
 
         <CustomButton size="large" >See my resume</CustomButton>
        </a>
